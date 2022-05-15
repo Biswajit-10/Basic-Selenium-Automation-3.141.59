@@ -1,7 +1,10 @@
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.logging.LogEntry;
 
 public class Color_Of_Forgotton_Password_in_Facebook {
 	static {
@@ -10,6 +13,11 @@ public class Color_Of_Forgotton_Password_in_Facebook {
 	public static void main(String[] args) {
 		WebDriver driver=new ChromeDriver();
 		driver.get("https://en-gb.facebook.com/");
+		List<LogEntry> logEntries = driver.manage().logs().get("logcat").getAll();
+		for (LogEntry logEntry : logEntries) {
+		        System.out.println(logEntry);
+		}
+		
 //		driver.findElement(By.xpath("//font[text()='Forgot password?']"));
 		WebElement link =driver.findElement(By.linkText("Forgotten password?"));
 		String color=link.getCssValue("color");	

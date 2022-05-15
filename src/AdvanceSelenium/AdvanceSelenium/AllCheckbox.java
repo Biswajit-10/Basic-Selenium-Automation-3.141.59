@@ -19,21 +19,21 @@ public class AllCheckbox {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		System.out.println("type url");
-		String url=sc.nextLine();
-//		String url="https://en-gb.facebook.com/";
+//		String url=sc.nextLine();
+		String url="https://en-gb.facebook.com/";
 		driver.get(url);
 		driver.findElement(By.linkText("Create New Account")).click();
-		List<WebElement> allchkbx = driver.findElements(By.xpath("//input[@type='checkbox']"));
-//		List<WebElement> allradbx = driver.findElements(By.xpath("//input[@type='radio']"));
-		for (WebElement webElement : allchkbx) {
+//		List<WebElement> allchkbx = driver.findElements(By.xpath("//input[@type='checkbox']"));
+		List<WebElement> allradbx = driver.findElements(By.xpath("//input[@type='radio']"));
+		for (WebElement webElement : allradbx) {
 			Thread.sleep(2000);
 			webElement.click();
 		}
-		Collections.reverse(allchkbx);
-		for (WebElement webElement : allchkbx) {
-			Thread.sleep(2000);
-			webElement.click();			
-		}
-		driver.close();
+//		Collections.reverse(allchkbx);
+//		for (WebElement webElement : allchkbx) {
+//			Thread.sleep(2000);
+//			webElement.click();			
+//		}
+//		driver.close();
 }
 }
