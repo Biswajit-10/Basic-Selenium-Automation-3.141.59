@@ -7,6 +7,7 @@ public class ChrOptions {
 	
 	public static void main(String[] args) {
 		ChromeOptions options = new ChromeOptions();
+		options.getBrowserVersion();
 				options.addArguments("start-maximized");
 				ChromeDriver driver = new ChromeDriver(options);
 	}
